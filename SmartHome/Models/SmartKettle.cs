@@ -24,5 +24,10 @@ namespace SmartHome.Models
             string state = IsOn ? "вкл" : "выкл";
             return $"{Name} — {state}, целевая температура {WaterTemperature}°C";
         }
+
+        public override double GetPowerUsage()
+        {
+            return IsOn ? 2000.0 : 0.0;
+        }
     }
 }

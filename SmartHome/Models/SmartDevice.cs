@@ -27,5 +27,10 @@ namespace SmartHome.Models
         }
 
         public abstract string GetStatus();
+
+        public virtual double GetPowerUsage()
+        {
+            return IsOn ? 10.0 : 0.0;
+        }
     }
 }

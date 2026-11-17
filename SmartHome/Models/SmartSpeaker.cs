@@ -18,5 +18,11 @@ namespace SmartHome.Models
             string state = IsOn ? "вкл" : "выкл";
             return $"{Name} — {state}, громкость {Volume}";
         }
+
+        public override double GetPowerUsage()
+        {
+            return IsOn ? 25.0 : 0.0;
+        }
     }
+
 }

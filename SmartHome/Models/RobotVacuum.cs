@@ -30,5 +30,10 @@ namespace SmartHome.Models
             string state = IsOn ? "вкл" : "выкл";
             return $"{Name} — {state}, заряд {BatteryLevel}%";
         }
+
+        public override double GetPowerUsage()
+        {
+            return IsOn ? 65.0 : 0.0;
+        }
     }
 }

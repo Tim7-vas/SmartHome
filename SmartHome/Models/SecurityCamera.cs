@@ -33,5 +33,10 @@ namespace SmartHome.Models
             string recordState = IsRecording ? "запись идёт" : "ожидание";
             return $"{Name} — {state}, режим: {recordState}";
         }
+
+        public override double GetPowerUsage()
+        {
+            return IsOn ? 12.0 : 0.0;
+        }
     }
 }
